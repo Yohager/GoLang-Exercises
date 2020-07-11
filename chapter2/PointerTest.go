@@ -1,0 +1,14 @@
+package main
+
+import "fmt"
+
+func f() *int {
+	v := 1
+	return &v
+}
+
+func main() {
+	var p = f()
+	fmt.Printf("%d\n",*p)
+	fmt.Println(*f() == *f())
+}

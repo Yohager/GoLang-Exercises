@@ -18,10 +18,12 @@ type argError struct {
 	prob string
 }
 
+//这是一个method
 func (e *argError) Error() string {
 	return fmt.Sprintf("%d - %s", e.arg, e.prob)
 }
 
+//这是一个function
 func f2(arg int) (int, error) {
 	if arg == 42 {
 		return -1, &argError{arg, "can not work with it!"}
@@ -31,6 +33,7 @@ func f2(arg int) (int, error) {
 
 func main() {
 	for _, i := range []int{7, 42} {
+		//在if的同一行进行错误检查是常见的一种用法
 		if r, e := f1(i); e != nil {
 			fmt.Println("f1 failed: ", e)
 		} else {

@@ -1,4 +1,4 @@
-package main 
+package main
 
 import (
 	"fmt"
@@ -10,6 +10,6 @@ import (
 // pi就是未导出的
 
 func main() {
+	fmt.Println(math.Log(2))
 	fmt.Println(math.Pi)
 }
-
